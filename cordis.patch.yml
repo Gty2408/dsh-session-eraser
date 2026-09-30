@@ -1,0 +1,4 @@
+# Register the session-deletion Host route and its sidebar entry points.
+- insert:
+    - id: dsh-session-eraser
+      name: dsh-session-eraser

@@ -1,0 +1,58 @@
+{
+  "name": "dsh-session-eraser",
+  "displayName": "DSH Session Eraser",
+  "description": "Delete a session from the DSH sidebar, removing its stored log and workspace accounting. Guards the session that is currently open.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "gty2408 <1738813647@qq.com>",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "cordis-plugin",
+    "plugin",
+    "session",
+    "delete",
+    "sidebar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gty2408/dsh-session-eraser.git"
+  },
+  "homepage": "https://github.com/Gty2408/dsh-session-eraser#readme",
+  "bugs": {
+    "url": "https://github.com/Gty2408/dsh-session-eraser/issues"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "test",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test/run.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ],
+      "platform": "web"
+    }
+  }
+}
